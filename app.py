@@ -1,7 +1,12 @@
 from flask import Flask, request, jsonify, render_template
 import sqlite3
 from flask_cors import CORS
+from flask import Flask
+app = Flask(__name__)
 
+@app.route("/")
+def home():
+    return "Hello, Flask on Render!"
 app = Flask(__name__)
 CORS(app)  # Enable CORS for frontend JS
 
@@ -26,3 +31,4 @@ def search():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
